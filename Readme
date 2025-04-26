@@ -1,0 +1,24 @@
+# Fraud Detection Streamlit App 🚀
+
+This application predicts whether a transaction is fraudulent or legitimate.
+
+## Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+
+3. Run the app:
+
+
+
+## Files
+- `models/`: Trained Random Forest and PCA Transformer
+- `app/`: Streamlit web app code
+- `data/`: (Optional) Source dataset
+
+## Notes
+- Trained using PCA and Random Forest.
+- Features: Amount, Old/New Sender/Receiver Balance, Transaction Type.
+
+Enjoy! 🎉
