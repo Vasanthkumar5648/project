@@ -9,13 +9,16 @@ from sklearn.decomposition import PCA
 # Load the trained model and PCA transformer
 @st.cache_resource
 def load_model():
-    with open('rf_model.pkl', 'rb') as model_file:
+    with open(MODEL_PATH, 'rb') as model_file:
         model = pickle.load(model_file)
-    with open('pca_transformer.pkl', 'rb') as pca_file:
+    with open(PCA_PATH, 'rb') as pca_file:
         pca = pickle.load(pca_file)
     return model, pca
 
-model, pca = load_model()
+
+MODEL_PATH = "../models/rf_model.pkl"
+PCA_PATH = "../models/pca_transformer.pkl"
+
 
 # Streamlit UI
 st.title('Fraud Transaction Prediction App')
