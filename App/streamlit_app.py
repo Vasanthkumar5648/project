@@ -39,7 +39,9 @@ newbalanceDest = st.number_input('New Balance (Receiver):', min_value=0.0, forma
 if st.button('Predict'):
     balance_diff_orig = oldbalanceOrg - newbalanceOrig
     balance_diff_dest = newbalanceDest - oldbalanceDest
-    type_encoded = LabelEncoder().fit(type_options).transform([type_selected])[0]
+    type_mapping = {'CASH_IN': 0, 'CASH_OUT': 1, 'DEBIT': 2, 'PAYMENT': 3, 'TRANSFER': 4}
+    type_encoded = type_mapping[type_selected]
+
 
     # Create DataFrame for model
     input_data = pd.DataFrame({
